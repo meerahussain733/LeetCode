@@ -7,11 +7,12 @@ class Solution:
             l=r=mid
         if len(s)<2:
             return s
-            
-        while l>0 and r< len(s)-1:
+        if len(s)==2 and s[l]==s[r]:
+            return s[l:r]
+        elif len(s)==2 and s[l]!=s[r]:
+            return s[l]
+        while l>=0 and r< len(s)-1:
                 if s[l]==s[r]:
                     l=l-1
                     r=r+1
-                elif len[s]==2:
-                    return s[l]
         return s[l+1:r]
