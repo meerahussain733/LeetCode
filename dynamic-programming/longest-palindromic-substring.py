@@ -1,18 +1,18 @@
 class Solution:
     def longestPalindrome(self, s: str) -> str:
-        mid=len(s)//2
-        if len(s)%2==0:
-            l,r = mid -1, mid
-        else:
-            l=r=mid
         if len(s)<2:
             return s
-        if len(s)==2 and s[l]==s[r]:
-            return s[l:r]
-        elif len(s)==2 and s[l]!=s[r]:
-            return s[l]
-        while l>=0 and r< len(s)-1:
-                if s[l]==s[r]:
-                    l=l-1
-                    r=r+1
-        return s[l+1:r]
+        def update_point(l,r):
+            while l>=0 and r< len(s)-1 and s[l]==s[r]:
+                        l=l-1
+                        r=r+1
+            return s[l+1:r]
+        longest = ""
+        for i in range(len(s)):
+            odd_s = update_point(i, i)
+            even_s = update_point(i, i + 1)
+            if len(odd_s) > len(longest):
+                longest = odd_s
+            if len(even_s) > len(longest):
+                longest = even_s
+        return longest
