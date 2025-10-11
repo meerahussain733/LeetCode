@@ -5,7 +5,8 @@ class Solution:
             l,r = mid -1, mid
         else:
             l=r=mid
-
+        if len(s)<2:
+            return s
         while l>=0 and r< len(s)-1:
                 if s[l]==s[r]:
                     l=l-1
