@@ -3,7 +3,7 @@ class Solution:
         if len(s)<2:
             return s
         def update_point(l,r):
-            while l>=0 and r< len(s)-1 and s[l]==s[r]:
+            while l>=0 and r< len(s) and s[l]==s[r]:
                         l=l-1
                         r=r+1
             return s[l+1:r]
