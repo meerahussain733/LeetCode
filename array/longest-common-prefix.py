@@ -1,7 +1,7 @@
 class Solution:
     def longestCommonPrefix(self, strs: List[str]) -> str:
         strs.sort()
-        if len(strs)==1:
+        if len(strs)==0:
             return ""
         k=""
         first=strs[0]
