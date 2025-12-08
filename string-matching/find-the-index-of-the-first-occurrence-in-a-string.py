@@ -6,6 +6,7 @@ class Solution:
         while r<len(haystack):
             if needle[0]==haystack[l] and needle[len(needle)-1]==haystack[r]:
                 return l
+                break
             l=l+1
             r=r+1
         return -1
