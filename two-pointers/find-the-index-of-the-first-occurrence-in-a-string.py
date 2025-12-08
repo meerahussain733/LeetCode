@@ -2,7 +2,7 @@ class Solution:
     def strStr(self, haystack: str, needle: str) -> int:
         l,r=0,len(needle)-1
         if haystack == needle:
-            return -1
+            return 0
         while r<len(haystack)-1:
             if needle[0]==haystack[l] and needle[len(needle)-1]==haystack[r]:
                 return l
