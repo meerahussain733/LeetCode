@@ -11,6 +11,4 @@ class Solution:
                 if stack[-1]!=pair[ch]:
                     return False
                 stack.pop()
-        if len(stack)==0:
-            return True
-        return False
+        return len(stack)==0
