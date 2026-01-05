@@ -5,6 +5,6 @@ class Solution:
             for j in range(i+1,k+i+1):
                 if nums[i]==nums[j] and abs(i-j)<=k:
                     return True 
-            i+=k
+            i+=k-1
         return False
         
