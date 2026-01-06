@@ -6,6 +6,5 @@ class Solution:
                 freq_ele[element]+=1
             else:
                 freq_ele[element]=1
-        sorted_frq=sorted(freq_ele)
-        return sorted_frq[:k]
-        
+        sorted_frq=sorted(freq_ele, key=freq_ele.get,reverse=True)
+        return sorted_frq[:k]        
