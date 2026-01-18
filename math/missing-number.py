@@ -1,12 +1,8 @@
 class Solution:
     def missingNumber(self, nums: List[int]) -> int:
-        '''
-        set contains unique numbers,
+        new=set(nums)
         target=len(nums)
-        '''
-        nums_set=set()
-        for i in range(len(nums)+1):
-            nums_set.add(i)
-        for i in nums_set:
-            if i not in nums:
-                return i
+        for i in range(len(nums)):
+            if target-i not in new:
+                return target-i
+        
