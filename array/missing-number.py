@@ -1,9 +1,14 @@
 class Solution:
     def missingNumber(self, nums: List[int]) -> int:
-        new=set(nums)
+        l=0
+        h=len(nums)-1
+        nums=sorted(nums)
         target=len(nums)
-        for i in range(len(nums)):
-            if target-i not in new:
-                return target-i
-        return 0
-        
+        while l<=h:
+            if (nums[l]+nums[h]) == target:
+                l+=1
+                h-=1
+            elif (nums[l]+nums[h])<target:
+                return nums[h]+1
+            else:
+                return nums[l]-1
