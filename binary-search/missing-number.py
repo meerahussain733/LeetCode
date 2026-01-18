@@ -4,11 +4,9 @@ class Solution:
         set contains unique numbers,
         target=len(nums)
         '''
-        target=len(nums)
-        nums_set=set(nums)
+        nums_set=set()
+        for i in range(len(nums)+1):
+            nums_set.add(i)
         for i in nums_set:
-            if target-i in nums_set:
-                pass
-            else:
-                return target-i
-        
+            if i not in nums:
+                return i
