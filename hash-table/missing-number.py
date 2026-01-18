@@ -5,5 +5,5 @@ class Solution:
         for i in range(len(nums)):
             if target-i not in new:
                 return target-i
-        return None
+        return 0
         
