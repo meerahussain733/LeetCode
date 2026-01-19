@@ -16,4 +16,5 @@ class Solution:
                 max_count=max(max_count,count)
             else:
                 count=1
+                max_count=max(max_count,count)
         return max_count
