@@ -1,7 +1,7 @@
 class Solution:
     def longestConsecutive(self, nums: List[int]) -> int:
         num_set=set(nums)
-        if len(nums)==1:
+        if not nums:
             return 0
         count=1
         sort_num=sorted(num_set)
