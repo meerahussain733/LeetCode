@@ -1,12 +1,18 @@
 class Solution:
     def characterReplacement(self, s: str, k: int) -> int:
-        result=0
-        for i in range(len(s)):
-            count, max_freq={},0
-            for j in range(i,len(s)):
-                count[s[j]]=1+count.get(s[j],0)
-                max_freq = max(max_freq, count[s[j]])
-                if (j - i + 1) - max_freq <= k:
-                    result= max(result, j - i + 1)
-        return result
-        
+        res = 0
+        char_set= set(s)
+
+        for c in char_set:
+            count = l = 0
+            for r in range(len(s)):
+                if s[r] == c:
+                    count += 1
+
+                while (r - l + 1) - count > k:
+                    if s[l] == c:
+                        count -= 1
+                    l += 1
+
+                res = max(res, r - l + 1)
+        return res
