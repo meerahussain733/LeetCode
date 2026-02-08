@@ -5,7 +5,7 @@ class Solution:
             for j in range(i,len(t)):
                 if s[i]==t[j]:
                     count+=1
-                    j+=1
+            continue
         if count==len(s):
             return True
         return False
