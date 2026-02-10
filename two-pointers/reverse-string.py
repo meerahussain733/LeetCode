@@ -4,12 +4,9 @@ class Solution:
         Do not return anything, modify s in-place instead.
         """
         #two pointer approach
-        temp=''
         l,r=0,len(s)-1
         while l<r:
-            temp=s[l]
-            s[l]= s[r]
-            s[r]=temp
+            s[r],s[l]= s[l],s[r]
             l+=1
             r-=1
         return s
