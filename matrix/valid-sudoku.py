@@ -11,7 +11,7 @@ class Solution:
                     return False
                 rows[i].add(board[i][j])
                 cols[j].add(board[i][j])
-                grid[i//3,j//3].add(board[i][j])
+                grid[(i//3,j//3)].add(board[i][j])
         return True
 
 
